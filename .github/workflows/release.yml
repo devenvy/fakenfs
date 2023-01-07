@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+
+    # checkout code
+    - name: checkout
+      uses: actions/checkout@v1
+
+    # build
+    - name: Build
+      run: g++ main.cpp -o /tmp/fakenfs
+
+    # release
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: /tmp/fakenfs

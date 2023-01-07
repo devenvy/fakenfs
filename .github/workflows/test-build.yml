@@ -1,0 +1,23 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+
+    # checkout code
+    - name: checkout
+      uses: actions/checkout@v1
+
+    # install dependencies
+    # - name: Install dependencies
+    #  run: sudo apt-get update && sudo apt-get install -y libc6-dev
+
+    # build
+    - name: Build
+      run: g++ main.cpp -o /tmp/fakenfs
