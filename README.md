@@ -30,8 +30,9 @@ To unregister
 
 ### Dependencies
 
+Ubuntu 22.04
 ```
-sudo apt install libboost-program-options1.71.0
+sudo apt install libboost-program-options1.74.0
 ```
 
 ### Compiling
@@ -41,5 +42,5 @@ sudo apt install libboost-program-options-dev
 ```
 
 ```
-g++ -m64 main.cpp -o fakenfs -lstdc++ -lboost_program_options
+g++ -m64 -I/usr/include/tirpc main.cpp -o fakenfs -lstdc++ -lboost_program_options -ltirpc
 ```

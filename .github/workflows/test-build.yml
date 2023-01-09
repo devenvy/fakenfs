@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
 
     # checkout code
@@ -19,8 +19,8 @@ jobs:
 
     # install dependencies
     - name: Install dependencies
-      run: sudo apt-get update && sudo apt-get install -y libboost-program-options-dev
+      run: sudo apt-get update && sudo apt-get install -y libtirpc-dev libboost-program-options-dev
 
     # build
     - name: Build
-      run: g++ -m64 main.cpp -o /tmp/fakenfs -lstdc++ -lboost_program_options
+      run: g++ -m64 -I/usr/include/tirpc main.cpp -o fakenfs -lstdc++ -lboost_program_options -ltirpc
