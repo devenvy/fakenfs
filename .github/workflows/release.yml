@@ -14,9 +14,13 @@ jobs:
     - name: checkout
       uses: actions/checkout@v1
 
+    # install dependencies
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y libboost-program-options-dev
+
     # build
     - name: Build
-      run: g++ main.cpp -o /tmp/fakenfs
+      run: g++ -m64 main.cpp -o /tmp/fakenfs -lstdc++ -lboost_program_options
 
     # release
     - name: Release
