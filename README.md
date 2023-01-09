@@ -32,7 +32,7 @@ To unregister
 
 Ubuntu 22.04
 ```
-sudo apt install libboost-program-options1.71.0
+sudo apt install libboost-program-options1.74.0
 ```
 
 ### Compiling
