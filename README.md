@@ -30,6 +30,7 @@ To unregister
 
 ### Dependencies
 
+Ubuntu 22.04
 ```
 sudo apt install libboost-program-options1.71.0
 ```
