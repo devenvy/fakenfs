@@ -42,5 +42,5 @@ sudo apt install libboost-program-options-dev
 ```
 
 ```
-g++ -m64 main.cpp -o fakenfs -lstdc++ -lboost_program_options
+g++ -m64 -I/usr/include/tirpc main.cpp -o fakenfs -lstdc++ -lboost_program_options -ltirpc
 ```
